@@ -12,6 +12,12 @@ const connection = mongoose.connect(uriDb, {
   useUnifiedTopology: true,
 });
 
+app.use(cors());
+
+app.get("/", (req,res,next) => {
+    res.json({ message: "xddddd" })
+})
+
 app.use(express.json());
 
 app.use((req, res) => {
