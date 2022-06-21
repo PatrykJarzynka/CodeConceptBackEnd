@@ -16,7 +16,7 @@ app.get("/", async (req, res, next) => {
   );
 
   const reposData = repos.data;
-  const reposNames = reposData.map((repo) => repo.name);
+    const reposNames = reposData.map((repo) => repo.name);
 
   res.json(reposNames);
 });
