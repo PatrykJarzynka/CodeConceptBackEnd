@@ -10,13 +10,16 @@ app.use(
   })
 );
 
+const apiRouter = require("./routes/repos");
+app.use(apiRouter);
+
 app.get("/", async (req, res, next) => {
   const repos = await axios.get(
-    "https://api.github.com/orgs/alibaba/repos?per_page=3"
+    "https://api.github.com/orgs/alibaba/repos?per_page=200"
   );
 
   const reposData = repos.data;
-    const reposNames = reposData.map((repo) => repo.name);
+  const reposNames = reposData.map((repo) => repo.name);
 
   res.json(reposNames);
 });
