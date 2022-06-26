@@ -15,8 +15,8 @@ router.post("/sendData", async (req, res, next) => {
 
 router.get("/", async (req, res, next) => {
   const repos = await axios.get(
-    "https://62b3525fa36f3a973d202c8f.mockapi.io/repositories"
-    // "https://api.github.com/orgs/alibaba/repos?per_page=200"
+    // "https://62b3525fa36f3a973d202c8f.mockapi.io/repositories"
+    "https://api.github.com/orgs/alibaba/repos?per_page=200"
   );
 
   const reposData = repos.data;
