@@ -5,12 +5,12 @@ require("dotenv").config();
 const port = process.env.PORT;
 const uriDb = process.env.URI_DB;
 
-const connection = mongoose.connect(uriDb, {
+const connection = mongoose.connect(uriDb, { 
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
-connection
+connection   //połączenie z mongoose
   .then(() => {
     console.log("Database connection successful");
     app.listen(port, () => {
